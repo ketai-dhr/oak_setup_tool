@@ -72,12 +72,17 @@ if (0 == search_depthai_python):
             f_.extract(file, r'./depthai/')
         print("Unzip python complete")
         f_.close()
-        sh(".\depthai\depthai_demo_python\python.exe .\depthai\install_requirements.py")
+        try:
+            sh(".\depthai\depthai_demo_python\python.exe .\depthai\install_requirements.py")
+        except:
+            pass
     else:
         print("download at address: http://192.168.0.48:8081/test/oak_setup_tools/uploads/cbdb5e63229d20a4d8001585c4579eac/depthai_demo_python.zip and put it in the home directory")
 elif (1 == search_depthai_python):
-    sh(".\depthai\depthai_demo_python\python.exe .\depthai\install_requirements.py")
-
+    try:
+        sh(".\depthai\depthai_demo_python\python.exe .\depthai\install_requirements.py")
+    except:
+        pass
 
 depthai_python_path = path + r"/depthai-python"
 depthai_API_examples_path = path + r"/depthai_API_examples"

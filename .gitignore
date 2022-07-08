@@ -1,0 +1,8 @@
+depthai
+depthai_API_examples
+depthai-python
+python
+Output
+*.zip
+__pycache__
+depthai-experiments
