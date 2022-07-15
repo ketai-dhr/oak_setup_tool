@@ -134,3 +134,19 @@ elif (1 == search_depthai_python_path and 1 == search_depthai_API_examples_path)
         # os.rename(examples_path, depthai_API_examples_path)
     else:
         print("Please build the python environment first")
+
+
+depthai_API_examples_path = path + r"/depthai_API_examples"
+depthai_API_examples_find_version_path = depthai_API_examples_path + "/" + "find_version.py"
+depthai_API_examples_find_version_result = search(depthai_API_examples_find_version_path)
+if 0 == depthai_API_examples_find_version_result:
+    shutil.copy("find_version.py", depthai_API_examples_path)
+else:
+    print("depthai_API_examples find_version exist")
+
+depthai_find_version_path = depthai_path + r"/find_version.py"
+depthai_find_version_result = search(depthai_find_version_path)
+if 0 == depthai_find_version_result:
+    shutil.copy("find_version.py", depthai_path)
+else:
+    print("depthai find_version exist")
